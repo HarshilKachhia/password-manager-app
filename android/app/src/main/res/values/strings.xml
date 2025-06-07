@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">charis_lux_gifting</string>
+    <string name="title_activity_main">charis_lux_gifting</string>
+    <string name="package_name">com.charisluxgifting.app</string>
+    <string name="custom_url_scheme">com.charisluxgifting.app</string>
+</resources>

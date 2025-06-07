@@ -1,0 +1,7 @@
+{
+  "name": "charis_lux_gifting",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

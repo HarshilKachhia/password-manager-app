@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" *ngIf="showBackButton">
+      <ion-back-button defaultHref="/" [text]="backButtonText"></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title>{{ title }}</ion-title>
+    
+    <ion-buttons slot="end" *ngIf="showMenu">
+      <ion-button>
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    <ion-buttons slot="end" *ngIf="showLogout">
+      <ion-button (click)="signOut()">
+        <ion-icon slot="icon-only" name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+    <!-- <ion-buttons slot="end" *ngIf="showSearch && !isSearchActive">
+      <ion-button (click)="toggleSearch()">
+        <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+  
+  <!-- Search Toolbar - Only shows when search is active -->
+  <!-- <ion-toolbar *ngIf="isSearchActive && showSearch">
+    <ion-searchbar 
+      placeholder="Search..." 
+      [(ngModel)]="searchQuery" 
+      (ionInput)="onSearchInput($event)"
+      (ionClear)="clearSearch()"
+      (ionCancel)="toggleSearch()"
+      [showCancelButton]="true"
+      animated
+      autocomplete="on"
+      #searchBar>
+    </ion-searchbar>
+  </ion-toolbar> -->
+</ion-header>

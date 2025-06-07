@@ -1,0 +1,46 @@
+<ion-content class="ion-padding">
+  <div class="flex flex-col justify-center h-full max-w-md mx-auto">
+    <div class="mb-4 grid gap-3">
+      <h1 class="text-2xl text-center font-bold text-primary">Login</h1>
+      <p class="text-center text-[14px] font-Basic-commercial-roman">
+        Please enter your e-mail and password:
+      </p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="px-4">
+      <!-- input fields -->
+      <div class="grid gap-0">
+        <ion-item lines="none">
+          <ion-input type="email" label="Email" labelPlacement="floating" placeholder="Email" formControlName="email"
+            errorText="Invalid Email Address"></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="relative">
+          <ion-input [type]="showPassword ? 'text' : 'password'" label="Password" labelPlacement="floating" placeholder="Password"
+            formControlName="password" errorText="Invalid Password"></ion-input>
+          <ion-button fill="clear" size="small" class="absolute right-2 top-[22px] z-10" type="button" (click)="showPassword = !this.showPassword">
+            <ion-icon [name]="showPassword ? 'eye-off' : 'eye'"></ion-icon>
+          </ion-button>
+        </ion-item>
+      </div>
+
+      <div class="text-right">
+        <ion-text color="medium" class="text-sm hover:underline cursor-pointer" (click)="forgotPassword()">
+          Forgot password?
+        </ion-text>
+      </div>
+
+      <ion-button expand="block" class="h-6 mt-6 rounded-lg text-base font-bold normal-case mx-0" type="submit">
+        Login
+      </ion-button>
+
+      <div class="text-center mt-4 text-[12px]">
+        <ion-text color="medium">
+          Don't have an account?
+          <a class="text-primary hover:underline cursor-pointer font-bold" (click)="navigateToSignUp()">
+            Create one</a>
+        </ion-text>
+      </div>
+    </form>
+  </div>
+</ion-content>

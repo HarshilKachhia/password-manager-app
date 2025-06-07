@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "957416137678",
+    "project_id": "charis-lux-gifting",
+    "storage_bucket": "charis-lux-gifting.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957416137678:android:d6f27ff9fd40c1d064c19f",
+        "android_client_info": {
+          "package_name": "com.charisluxgifting.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDr1yD8qwyNRh5wcM3TX1vC96GneE7Q5zA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
