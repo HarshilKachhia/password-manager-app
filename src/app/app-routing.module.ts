@@ -9,8 +9,8 @@ const routes: Routes = [
     canActivate: [AuthRedirectGuard]
   },
   {
-    path: '',
-    loadChildren: () => import('./features/tabbar/tabbar.module').then(m => m.TabbarPageModule),
+    path: 'dashboard',
+    loadChildren: () => import('./features/dashboard/dashboard.module').then(m => m.DashboardModule),
     canActivate: [AuthGuard] 
   },
   {

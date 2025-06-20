@@ -1,11 +1,24 @@
 <app-common-header 
-  title="Dashboard" 
+  title="Password Manager" 
   [showLogout]="true">
 </app-common-header>
 
 <ion-content>
-  <div class="size-full flex flex-col items-center justify-center">
-    <h2>Welcome to Lux Gifting Dashboard</h2>
-    <p>This is your personalized dashboard.</p>
-  </div>
+  <!-- <ion-searchbar [(ngModel)]="searchQuery" placeholder="Search items" debounce="500" (input)="filteredItems($event)"></ion-searchbar> -->
+  <ion-searchbar clear-icon="trash-bin" [debounce]="1000" (ionInput)="filteredItems($event)"></ion-searchbar>
+
+  <ion-list>
+    <ion-card class="p-3" *ngFor="let item of filteredData">
+      <ion-item lines="none">
+        <ion-icon [name]="item.icon" slot="start"></ion-icon>
+        <ion-label>{{ item.title }}</ion-label>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

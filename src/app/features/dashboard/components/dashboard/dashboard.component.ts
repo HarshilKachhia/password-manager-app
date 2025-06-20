@@ -9,17 +9,33 @@ import { AlertService } from 'src/app/shared/services/alert.service';
   standalone: false
 })
 export class DashboardComponent implements OnInit {
-  searchQuery: string = '';
+  items = [
+    { icon: 'lock-closed', title: 'Bank Account' },
+    { icon: 'person', title: 'Social Media' },
+    { icon: 'mail', title: 'Email Account' }
+  ];
+
+  filteredData: any[] = [];
 
   constructor(
     private authService: AuthService,
     private alertService: AlertService
   ) { }
 
-  ngOnInit() { }
-  
-  onSearch(query: any) {
-    this.searchQuery = query;
-    console.log('this.searchQuery: ', this.searchQuery);
+  ngOnInit() {
+    this.filteredData = this.items;
+  }
+
+  filteredItems(event: any) {
+    const target = event.target as HTMLIonSearchbarElement;
+    const query = target.value?.toLowerCase() || '';
+    console.log('query: ', query);
+    if (!query) {
+      this.filteredData = this.items;
+    }
+    this.filteredData = this.items.filter(item => {
+      console.log('item: ', item);
+      return item.title.toLowerCase().includes(query)
+    }) || [];
   }
 }

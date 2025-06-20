@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/features/auth/services/auth.service';
   standalone: false,
 })
 export class CommonHeaderComponent implements OnInit {
-  @Input() title: string = 'Lux Gifting';
+  @Input() title: string = 'Password Manager';
   @Input() showBackButton: boolean = false;
   @Input() backButtonText: string = '';
   @Input() showMenu: boolean = false;
